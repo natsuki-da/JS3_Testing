@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	form(method='POST' action='')
+		i #{undefined===result ? '' : result.msg}
+		h2 You have #{balls} pokemon balls left!
+		 
+		p Pokemon #{pokemon.name} lvl #{pokemon.lvl} appeared! 
+		img(src=('/images/' + pokemon.name + '.png'))
+		br
+		<!--input#balls.form-control(type='hidden', value=(undefined===balls ? '10' : balls))-->
+		button.btn.btn-primary(type='submit', value='throw', name='action') Throw ball
+		button.btn.btn-secondary(type='submit', value='skip', name='action') Skip
+	
+
+	p Score: #{score}
